@@ -45,13 +45,29 @@ def extraer_texto(datos):
     except (KeyError, IndexError):
         raise RuntimeError("Error al extraer el texto de la respuesta de la API de Gemini. La estructura de datos no es la esperada.")   
 
+# Precios por token en USD (tarifa estándar de gemini-3.5-flash-lite: USD 0,30 de entrada
+# y USD 2,50 de salida por cada 1 millón de tokens). 
+PRECIO_ENTRADA = 0.30 / 1_000_000
+PRECIO_SALIDA = 2.50 / 1_000_000
+
+def calcular_costo(datos, precio_entrada, precio_salida):
+    uso = datos["usageMetadata"]
+    tokens_entrada = uso["promptTokenCount"]
+    tokens_salida = uso["candidatesTokenCount"]
+    return (tokens_entrada * precio_entrada) + (tokens_salida * precio_salida)
+ 
 def obtener_datos_de_prueba(pregunta):
     url, body = armar_peticion(pregunta)
     datos = enviar_peticion(url, body)
-    return extraer_texto(datos)
-
-# Bloque de prueba local (bien indentado al margen izquierdo)
+    texto = extraer_texto(datos)
+    costo = calcular_costo(datos, PRECIO_ENTRADA, PRECIO_SALIDA)
+    return texto, costo
+ 
+# Bloque de prueba local 
 if __name__ == "__main__":
     
-    print(obtener_datos_de_prueba("¿Cuanto gana en promedio un  IA Engineer junior en latam?"))
+    texto, costo = obtener_datos_de_prueba("¿Cuanto gana en promedio un  IA Engineer junior en latam? responde brevemente")
+    print(texto)
+    print(f"Costo estimado de la petición: {costo:.6f} USD")
+ 
  
