@@ -1,11 +1,14 @@
 import os
+import time
 import requests
 from dotenv import load_dotenv
 
 # Carga las variables de entorno desde el archivo .env
 load_dotenv()
 
-def armar_peticion(pregunta):
+MODELO_POR_DEFECTO = "gemini-3.8-flash"
+
+def armar_peticion(pregunta, MODELO=MODELO_POR_DEFECTO):
     if not pregunta:
         raise ValueError("La pregunta no puede estar vacía.")
     # Obtiene la clave de API desde el entorno de forma segura
@@ -14,7 +17,7 @@ def armar_peticion(pregunta):
     if not api_key:
         raise RuntimeError("No se encontró la variable GEMINI_API_KEY.")
     # URL oficial de la API de Gemini con el modelo configurado
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODELO}:generateContent?key={api_key}"
     # Estructura del cuerpo (body) de la petición requerida por la API
     body = {"contents": [{"parts": [{"text": pregunta}]}]}
     return url, body
@@ -63,10 +66,23 @@ def obtener_datos_de_prueba(pregunta):
     costo = calcular_costo(datos, PRECIO_ENTRADA, PRECIO_SALIDA)
     return texto, costo
  
+def medir_latencia(pregunta, modelo=MODELO_POR_DEFECTO, repeticiones=4):
+    latencias = []
+    for i in range(repeticiones):
+        url, body = armar_peticion(pregunta, modelo)
+        inicio = time.perf_counter()
+        datos = enviar_peticion(url, body)
+        fin = time.perf_counter()
+        latencias.append(fin - inicio)
+        print(f"Repetición {i + 1}: Latencia = {latencias[-1]:.2f} segundos")
+        time.sleep(1)  # Pausa de 1 segundo entre repeticiones para evitar sobrecarga
+    promedio = sum(latencias) / len(latencias)   
+    return promedio, datos   
+
 # Bloque de prueba local 
 if __name__ == "__main__":
     
-    texto, costo = obtener_datos_de_prueba("¿Cuanto gana en promedio un  IA Engineer junior en latam? responde brevemente")
+    texto, costo = obtener_datos_de_prueba("Un terreno de 300 m2 tiene ocupación de suelo de 0,6 y coeficiente de constructibilidad de 1,2. ¿Cuántos m2 puedo ocupar en el primer piso y cuántos m2 totales puedo construir? Responde en texto plano, sin Markdown ni símbolos LaTeX, en máximo 3 líneas.")
     print(texto)
     print(f"Costo estimado de la petición: {costo:.6f} USD")
  
