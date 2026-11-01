@@ -1,0 +1,14 @@
+{
+  "extraer_datos_proyecto": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "clasificar_consulta": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "detectar_documentos_faltantes": {
+    "exitos": 3,
+    "intentos": 3
+  }
+}
