@@ -26,7 +26,7 @@ for modelo, (precio_entrada, precio_salida) in MODELOS.items():
             print(f"\nP: {pregunta}")
             _, datos = medir_latencia(pregunta, modelo, repeticiones=1)  
             print(f"R: {extraer_texto(datos)}")
-    except (RuntimeError, ValueError) as error: 
+    except (RuntimeError, ValueError, TimeoutError) as error: 
         print(f"Falló la prueba de  {modelo}: {error}") 
    
 
