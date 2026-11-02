@@ -34,25 +34,20 @@ def armar_peticion(pregunta, system_instruction=None, response_schema=None, mode
 
 def enviar_peticion(url, body):
     try:
-        # Envía la petición HTTP POST enviando el diccionario como JSON
-        respuesta = requests.post(url, json=body)
-    except requests.exceptions.ConnectionError:
-        raise RuntimeError(
-            "Error de conexión: No se pudo conectar a la API de Gemini"
-        )
-     # Validación por si la API rechaza la petición (ej. clave incorrecta)
-
-    if respuesta.status_code != 200:
-        raise RuntimeError(
-            f"Error en la petición (Código {respuesta.status_code}): {respuesta.text}"
-        )
-        
+        respuesta = requests.post(url, json=body, timeout=60)  # Timeout de 60 segundos
+    except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+        raise TimeoutError("No se pudo contactar al proveedor. Puede ser momentaneo. Intenta nuevamente en unos segundos.")      
+        raise TimeoutError("No se pudo contactar al proveedor. Puede ser momentaneo. Intenta nuevamente en unos segundos.")      
+    if respuesta.status_code in (401, 403) or "API_KEY_INVALID" in respuesta.text:  
+        raise ValueError("Credencial inválida o sin permiso. Revisa tu GEMINI_API_KEY.")
+    if respuesta.status_code == 429 or respuesta.status_code >= 500:    
+        raise TimeoutError("El proveedor no pudo procesar la petición. hay que esperar un momento y reintentar.") 
+    if respuesta.status_code != 200:    
+        raise RuntimeError(f"Error en la petición (Código {respuesta.status_code}): {respuesta.text}")  
     try:
         return respuesta.json()
     except requests.exceptions.JSONDecodeError:
-        raise RuntimeError(
-        "Error al decodificar la respuesta JSON de la API de Gemini."
-        )  
+        raise RuntimeError("Error al decodificar la respuesta JSON de la API de Gemini.")  
      
 def extraer_texto(datos):
     try:
