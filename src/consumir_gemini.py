@@ -37,8 +37,7 @@ def enviar_peticion(url, body):
         respuesta = requests.post(url, json=body, timeout=60)  # Timeout de 60 segundos
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
         raise TimeoutError("No se pudo contactar al proveedor. Puede ser momentaneo. Intenta nuevamente en unos segundos.")      
-        raise TimeoutError("No se pudo contactar al proveedor. Puede ser momentaneo. Intenta nuevamente en unos segundos.")      
-    if respuesta.status_code in (401, 403) or "API_KEY_INVALID" in respuesta.text:  
+    if respuesta.status_code in (401, 403) or (respuesta.status_code == 400 and "API_KEY_INVALID" in respuesta.text):  
         raise ValueError("Credencial inválida o sin permiso. Revisa tu GEMINI_API_KEY.")
     if respuesta.status_code == 429 or respuesta.status_code >= 500:    
         raise TimeoutError("El proveedor no pudo procesar la petición. hay que esperar un momento y reintentar.") 
