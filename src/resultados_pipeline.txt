@@ -1,0 +1,6 @@
+[Caso 1] Coincidencia texto crudo: 11.9%
+[Caso 1] Coincidencia texto procesado: 22.0%
+[Caso 2] Coincidencia texto crudo: 36.4%
+[Caso 2] Coincidencia texto procesado: 38.1%
+[Caso 3] Coincidencia texto crudo: 22.6%
+[Caso 3] Coincidencia texto procesado: 28.0%
