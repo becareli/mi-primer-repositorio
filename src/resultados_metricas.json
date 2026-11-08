@@ -1,0 +1,162 @@
+[
+  {
+    "consulta": "¿Qué es el coeficiente de constructibilidad?",
+    "referencia": "El coeficiente de constructibilidad es el número que multiplicado por la superficie del terreno determina la superficie máxima que se puede construir.",
+    "respuesta": "Es un índice urbanístico que determina la cantidad máxima de metros cuadrados que se pueden edificar en un terreno. Se calcula multiplicando este factor por la superficie total del predio para establecer el límite legal de área construida permitida.",
+    "precision": 0.358974358974359,
+    "cobertura": 0.6363636363636364,
+    "f1": 0.459016393442623
+  },
+  {
+    "consulta": "¿Qué es el coeficiente de ocupación de suelo?",
+    "referencia": "El coeficiente de ocupación de suelo es el número que multiplicado por la superficie del terreno determina la superficie máxima que se puede construir en el primer piso.",
+    "respuesta": "Es un indicador urbanístico que define el porcentaje máximo de un terreno que puede ser cubierto por la huella de una construcción a nivel del suelo. Su objetivo es delimitar el área edificable en la planta baja y garantizar una porción obligatoria de espacio libre sin construir.",
+    "precision": 0.3404255319148936,
+    "cobertura": 0.5714285714285714,
+    "f1": 0.4266666666666666
+  },
+  {
+    "consulta": "¿Qué es la rasante en arquitectura?",
+    "referencia": "La rasante es una línea imaginaria que limita la altura de una edificación respecto de los deslindes, para resguardar el asoleamiento y la luz de los vecinos.",
+    "respuesta": "Es la línea que marca el nivel oficial de la calle o terreno frente a una construcción. En arquitectura y urbanismo, funciona como cota de referencia para medir las alturas máximas permitidas de un edificio y regular su integración con la vía pública.",
+    "precision": 0.3023255813953488,
+    "cobertura": 0.48148148148148145,
+    "f1": 0.37142857142857144
+  },
+  {
+    "consulta": "¿Qué es el antejardín?",
+    "referencia": "El antejardín es el espacio comprendido entre la línea oficial y la línea de edificación.",
+    "respuesta": "El antejardín es el área abierta ubicada entre la fachada principal de una edificación y el límite con la acera o calle pública. Generalmente está ajardinada y funciona como una zona estética y de transición entre el espacio privado y la vía pública.",
+    "precision": 0.2558139534883721,
+    "cobertura": 0.7333333333333333,
+    "f1": 0.3793103448275862
+  },
+  {
+    "consulta": "¿Qué es la DOM?",
+    "referencia": "La Dirección de Obras Municipales es la unidad municipal que aprueba los permisos de edificación y recibe las obras terminadas.",
+    "respuesta": "El DOM (*Document Object Model*) es una interfaz de programación que representa un documento HTML o XML como un árbol de nodos y objetos. Permite a lenguajes como JavaScript acceder y modificar dinámicamente la estructura, el contenido y el estilo de una página web.",
+    "precision": 0.13636363636363635,
+    "cobertura": 0.3,
+    "f1": 0.18749999999999997
+  },
+  {
+    "consulta": "¿Qué es un permiso de edificación?",
+    "referencia": "El permiso de edificación es la autorización que otorga la DOM para construir, ampliar o modificar una obra, una vez verificado que el proyecto cumple la normativa.",
+    "respuesta": "Es una autorización legal emitida por la autoridad municipal que permite realizar obras de construcción, ampliación o remodelación. Su objetivo es certificar que el proyecto cumple con las normativas urbanísticas, técnicas y de seguridad vigentes.",
+    "precision": 0.3142857142857143,
+    "cobertura": 0.4074074074074074,
+    "f1": 0.3548387096774193
+  },
+  {
+    "consulta": "¿Qué es la recepción definitiva de una obra?",
+    "referencia": "La recepción definitiva es el acto con que la DOM certifica que la obra se ejecutó conforme al permiso y a los planos aprobados, y permite habitarla o usarla.",
+    "respuesta": "Es el acto formal mediante el cual el promotor o cliente acepta la obra como totalmente concluida y conforme a lo pactado, tras superar un periodo de garantía. Con ella se extinguen las obligaciones contractuales del constructor y se procede a la devolución de las fianzas o retenciones.",
+    "precision": 0.2708333333333333,
+    "cobertura": 0.4482758620689655,
+    "f1": 0.33766233766233766
+  },
+  {
+    "consulta": "¿Qué es el certificado de informaciones previas?",
+    "referencia": "El certificado de informaciones previas es el documento municipal que indica las normas urbanísticas aplicables a un predio, como el uso de suelo, los coeficientes y las rasantes y además, define las exigencias de estacionamientos y también los usos permitidos y no permitidos en la zona donde se ubica el inmueble.",
+    "respuesta": "Es un documento oficial emitido por la Dirección de Obras Municipales (DOM) en Chile que detalla las normas urbanísticas y técnicas aplicables a un predio específico, tales como usos de suelo permitidos, alturas máximas y líneas de edificación, según el plan regulador vigente.",
+    "precision": 0.5116279069767442,
+    "cobertura": 0.43137254901960786,
+    "f1": 0.46808510638297873
+  },
+  {
+    "consulta": "¿Qué es un plan regulador comunal?",
+    "referencia": "El plan regulador comunal es el instrumento que fija las normas de uso de suelo, densidad y edificación dentro de una comuna, entre otras, como por ejemplo, exigencias en el uso del antejardín.",
+    "respuesta": "Es un instrumento de planificación urbana que regula el desarrollo físico de una comuna. Define los límites urbanos, normas de edificación, usos de suelo y trazados viales, siendo de cumplimiento obligatorio para todo proyecto público o privado.",
+    "precision": 0.35135135135135137,
+    "cobertura": 0.3939393939393939,
+    "f1": 0.37142857142857144
+  },
+  {
+    "consulta": "¿Qué es la línea oficial?",
+    "referencia": "La línea oficial es el límite entre la propiedad privada y los bienes nacionales de uso público, como la calle o la vereda.",
+    "respuesta": "Es la postura, política o versión de los hechos que adopta formalmente un gobierno, partido político o entidad. Representa el criterio institucional autorizado que sus miembros deben comunicar y defender públicamente, evitando discrepancias internas.",
+    "precision": 0.20588235294117646,
+    "cobertura": 0.30434782608695654,
+    "f1": 0.2456140350877193
+  },
+  {
+    "consulta": "¿Qué es un deslinde?",
+    "referencia": "El deslinde es el límite que separa un predio de los predios vecinos o de la vía pública.",
+    "respuesta": "El deslinde es el procedimiento legal y técnico que consiste en identificar, fijar y marcar los límites exactos de un terreno o propiedad. Su objetivo principal es delimitar con precisión la extensión de un inmueble para evitar o resolver disputas territoriales entre propietarios colindantes.",
+    "precision": 0.25,
+    "cobertura": 0.6111111111111112,
+    "f1": 0.3548387096774194
+  },
+  {
+    "consulta": "¿Qué es la densidad bruta?",
+    "referencia": "La densidad bruta es la cantidad de viviendas o habitantes por hectárea de superficie total del territorio.",
+    "respuesta": "La **densidad bruta** es un indicador urbanístico que calcula la cantidad de habitantes o viviendas respecto a la superficie total de un territorio. A diferencia de la densidad neta, este cálculo incluye calles, parques, equipamientos y todos los espacios públicos.",
+    "precision": 0.35,
+    "cobertura": 0.8235294117647058,
+    "f1": 0.4912280701754386
+  },
+  {
+    "consulta": "¿Qué es un revisor independiente de proyectos?",
+    "referencia": "El revisor independiente es un profesional inscrito en un registro que revisa que un proyecto cumpla la normativa antes de que la DOM otorgue el permiso. El revisor independiente es solidariamente responsable con el arquitecto patrocinante del proyecto.",
+    "respuesta": "Es un profesional o entidad externa y certificada que evalúa de forma imparcial un proyecto de construcción o ingeniería. Su función principal es verificar y certificar que el diseño cumpla estrictamente con todas las normativas técnicas, urbanísticas y de seguridad vigentes antes de su ejecución.",
+    "precision": 0.28888888888888886,
+    "cobertura": 0.34210526315789475,
+    "f1": 0.3132530120481927
+  },
+  {
+    "consulta": "¿Qué es un anteproyecto de edificación?",
+    "referencia": "El anteproyecto de edificación es una presentación previa a la DOM para fijar las normas urbanísticas aplicables antes de solicitar el permiso. Este documento tiene una vigencia legal de 6 meses y puedes solicitarlo sin la necesidad de acreditar, por ejemplo, el proyecto de cálculo estructural, entre otros.",
+    "respuesta": "Es la fase preliminar del diseño arquitectónico que define a grandes rasgos la distribución espacial, formal, funcional y económica de una obra. Su objetivo es evaluar la viabilidad y plasmar las ideas básicas para la aprobación del cliente antes de desarrollar el proyecto ejecutivo final.",
+    "precision": 0.28888888888888886,
+    "cobertura": 0.2708333333333333,
+    "f1": 0.2795698924731182
+  },
+  {
+    "consulta": "¿Qué es la Ley General de Urbanismo y Construcciones?",
+    "referencia": "La Ley General de Urbanismo y Construcciones es el DFL 458 de 1975, que regula la planificación urbana y la construcción en Chile. La ley, hasta el día de hoy, ha tenido innumerables perfeccionamientos y modificaciones.",
+    "respuesta": "Es el marco legal matriz que regula la planificación urbana, la urbanización y la edificación en Chile. Establece los principios, procedimientos y responsabilidades de autoridades y profesionales para garantizar un desarrollo territorial y de construcción seguro, ordenado y armónico.",
+    "precision": 0.4358974358974359,
+    "cobertura": 0.4722222222222222,
+    "f1": 0.45333333333333337
+  },
+  {
+    "consulta": "¿Qué es la Ordenanza General de Urbanismo y Construcciones?",
+    "referencia": "La Ordenanza General de Urbanismo y Construcciones es el decreto supremo 47 de 1992, que reglamenta la ley general. Es una norma que ha tenido varias modificaciones, la cual se ha ido perfeccionando con el tiempo.",
+    "respuesta": "Es el reglamento de la Ley General de Urbanismo y Construcciones de Chile que fija los estándares técnicos, administrativos y de seguridad obligatorios. Regula la planificación urbana, el diseño arquitectónico y los procesos de edificación y urbanización en todo el territorio nacional.",
+    "precision": 0.30952380952380953,
+    "cobertura": 0.3611111111111111,
+    "f1": 0.3333333333333333
+  },
+  {
+    "consulta": "Un terreno de 300 m2 tiene un coeficiente de ocupación de suelo de 0,6. ¿Cuántos m2 puedo ocupar en el primer piso?",
+    "referencia": "Puedes ocupar 180 metros cuadrados, porque 300 por 0,6 es 180.",
+    "respuesta": "Puedes ocupar hasta **180 m²** en el primer piso. \nEl cálculo resulta de multiplicar la superficie total por el coeficiente de ocupación (300 m² × 0,6).",
+    "precision": 0.24,
+    "cobertura": 0.5454545454545454,
+    "f1": 0.3333333333333333
+  },
+  {
+    "consulta": "Un terreno de 500 m2 tiene un coeficiente de constructibilidad de 1,2. ¿Cuántos m2 puedo construir como máximo?",
+    "referencia": "Puedes construir como máximo 600 metros cuadrados, porque 500 por 1,2 es 600.",
+    "respuesta": "Puedes construir como máximo **600 m²**. \nEl cálculo se realiza multiplicando la superficie del terreno por el coeficiente (500 m² × 1,2).",
+    "precision": 0.38095238095238093,
+    "cobertura": 0.6153846153846154,
+    "f1": 0.47058823529411764
+  },
+  {
+    "consulta": "¿Qué es una obra menor?",
+    "referencia": "Una obra menor es una construcción pequeña, como una ampliación de poca superficie, que se tramita con un permiso simplificado en la DOM. Para calificar como obra menor, la superficie a ampliar debe ser inferior a 100 m².",
+    "respuesta": "Una obra menor es una reforma sencilla y de bajo presupuesto que no altera la estructura, la fachada ni los elementos protegidos de un inmueble. Se limita a trabajos de mantenimiento o acabados (como pintar o cambiar suelos) y requiere solo un trámite municipal básico, sin necesidad de un proyecto técnico de obra.",
+    "precision": 0.2641509433962264,
+    "cobertura": 0.3684210526315789,
+    "f1": 0.3076923076923077
+  },
+  {
+    "consulta": "¿Qué es el cambio de destino de una edificación?",
+    "referencia": "El cambio de destino es la modificación del uso de una edificación, por ejemplo de vivienda a oficina, y requiere autorización de la DOM. Y generalmente va acompañado con la exigencia de estacionamientos al interior del predio.",
+    "respuesta": "Es el trámite legal y técnico mediante el cual se modifica el uso autorizado de un inmueble (por ejemplo, de residencial a comercial o viceversa). Requiere cumplir con las normativas urbanísticas vigentes y obtener una licencia municipal que apruebe y habilite su nueva función.",
+    "precision": 0.29545454545454547,
+    "cobertura": 0.35135135135135137,
+    "f1": 0.3209876543209877
+  }
+]
