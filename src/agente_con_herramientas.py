@@ -14,6 +14,7 @@ from langchain_core.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from cadena_tres_pasos import REGLAS
+from trazas import marcar_repeticiones_sospechosas, registrar_traza
 from carga_ocupacion import (
     TABLA_M2_POR_PERSONA,
     UMBRAL_EDIFICIO_USO_PUBLICO,
@@ -108,14 +109,32 @@ def herramientas_usadas(resultado) -> list:
 
 
 def texto_de(resultado) -> str:
-    """Saca solo el texto de la respuesta, venga como str o como bloques."""
+    """Saca solo el texto de la respuesta, venga como str o como bloques de Gemini."""
     salida = resultado["output"]
     if isinstance(salida, str):
         return salida
     return "".join(
         bloque["text"] for bloque in salida
         if isinstance(bloque, dict) and bloque.get("type") == "text"
-    )    
+    )
+
+
+def mostrar_traza(titulo, resultado):
+    """Imprime la decisión del agente de forma legible, sin el texto crudo del modelo."""
+    print(f"\n=== {titulo} ===")
+    if not resultado["intermediate_steps"]:
+        print("Herramientas usadas: ninguna")
+    for n, (accion, observacion) in enumerate(resultado["intermediate_steps"], 1):
+        print(f"{n}. {accion.tool}({accion.tool_input})")
+        print(f"   -> {observacion}")
+    print("RESPUESTA:", texto_de(resultado))
+
+
+def preguntar(ejecutor, session_id, entrada):
+    """Hace una pregunta al agente Y guarda su traza en trazas_agente.jsonl."""
+    resultado = ejecutor.invoke({"entrada": entrada})
+    registrar_traza(session_id, entrada, resultado)
+    return resultado
 
 
 if __name__ == "__main__":
@@ -126,24 +145,28 @@ if __name__ == "__main__":
     ejecutor = construir_agente(modelo)
 
     # Prueba 1: debería usar SOLO el cálculo.
-    r1 = ejecutor.invoke({"entrada": "Calcula la carga de ocupación de un edificio "
-                          "con oficinas de 500 m2 y estacionamientos de 816 m2."})
+    r1 = preguntar(ejecutor, "prueba_1", "Calcula la carga de ocupación de un edificio "
+                   "con oficinas de 500 m2 y estacionamientos de 816 m2.")
+    mostrar_traza("Prueba 1: cálculo", r1)
     assert herramientas_usadas(r1) == ["calcular_carga_ocupacion"], herramientas_usadas(r1)
-    print("RESPUESTA 1:", texto_de(r1), "\n")
 
     # Prueba 2: debería usar SOLO la búsqueda de reglas.
-    r2 = ejecutor.invoke({"entrada": "¿El informe favorable es obligatorio para "
-                          "un anteproyecto?"})
+    r2 = preguntar(ejecutor, "prueba_2", "¿El informe favorable es obligatorio para "
+                   "un anteproyecto?")
+    mostrar_traza("Prueba 2: reglas", r2)
     assert herramientas_usadas(r2) == ["consultar_reglas_informe"], herramientas_usadas(r2)
-    print("RESPUESTA 2:", texto_de(r2), "\n")
 
-    # Prueba 3: necesita las dos, una después de la otra.
-    r3 = ejecutor.invoke({"entrada": "Oficinas de 500 m2 y estacionamientos de "
-                          "816 m2: ¿es obligatorio el informe favorable?"})
-    print("HERRAMIENTAS PRUEBA 3:", herramientas_usadas(r3))
-    print("RESPUESTA 3:", texto_de(r3), "\n")
+    # Prueba 3: necesita las dos, una después de la otra (aquí solo se muestra).
+    r3 = preguntar(ejecutor, "prueba_3", "Oficinas de 500 m2 y estacionamientos de "
+                   "816 m2: ¿es obligatorio el informe favorable?")
+    mostrar_traza("Prueba 3: cálculo + reglas", r3)
 
     # Prueba 4: no debería usar ninguna.
-    r4 = ejecutor.invoke({"entrada": "Hola, ¿en qué me puedes ayudar?"})
+    r4 = preguntar(ejecutor, "prueba_4", "Hola, ¿en qué me puedes ayudar?")
+    mostrar_traza("Prueba 4: sin herramientas", r4)
     assert herramientas_usadas(r4) == [], herramientas_usadas(r4)
-    print("RESPUESTA 4:", texto_de(r4))
+
+    # Bloque 23: primera pasada automática sobre las trazas guardadas.
+    print("\n=== Revisión de trazas ===")
+    avisos = marcar_repeticiones_sospechosas()
+    print("\n".join(avisos) if avisos else "Sin repeticiones sospechosas.")
