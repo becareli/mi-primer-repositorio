@@ -20,3 +20,7 @@ Thumbs.db
 # Logs
 *.log
 trazas_agente.jsonl
+
+
+# Índice de vectores (regenerable con python src\indexar_corpus.py)
+vectorstore/
