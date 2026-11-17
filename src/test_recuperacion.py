@@ -51,7 +51,8 @@ def test_construir_prompt_cumple_lo_que_debe_cumplirse(carpeta):
 def test_el_prompt_instruye_citar_y_derivar():
     p = rc.PROMPT_TEMPLATE
     assert "SOLO el contexto" in p and "Cita la fuente" in p
-    assert "revision humana" in p and "PENDIENTE" in p
+    assert "en vez de inventar" in p and "revisor independiente" in p.lower()
+    assert "PENDIENTE" in p
 
 
 def test_construir_prompt_no_reindexa(carpeta):

@@ -36,7 +36,7 @@ Si el contexto marca una regla como PENDIENTE o LECTURA, di que es orientativa y
 que esta por verificar. No calcules cargas de ocupacion tu mismo: el calculo lo
 hace la calculadora del sistema.
 Si el contexto no alcanza para responder, dilo explicitamente y deriva a
-revision humana, en vez de inventar.
+un Arquitecto Revisor Independiente, en vez de inventar.
 
 Contexto:
 {contexto}

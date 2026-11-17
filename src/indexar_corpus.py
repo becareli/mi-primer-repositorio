@@ -56,10 +56,9 @@ CORPUS = [
         "estado": "PENDIENTE",
         "texto": (
             "El informe favorable de un revisor independiente de arquitectura "
-            "es obligatorio para los edificios de uso público y para los "
-            "edificios de propiedad pública. Sin el informe favorable la "
-            "Dirección de Obras Municipales no puede otorgar el permiso de "
-            "edificación de esos edificios."
+            "es obligatorio para los edificios de uso público. Sin el informe "
+            "favorable la Dirección de Obras Municipales no puede otorgar el "
+            "permiso de edificación de esos edificios."
         ),
     },
     {
@@ -68,10 +67,19 @@ CORPUS = [
         "estado": "PENDIENTE",
         "texto": (
             "Cuando la carga de ocupación es de 100 personas o menos, el informe "
-            "del revisor independiente es voluntario. En ese caso el propietario "
-            "puede optar por él y obtener una rebaja de 30% en los derechos "
-            "municipales, y el plazo de revisión de la Dirección de Obras es de "
-            "15 días hábiles."
+            "del revisor independiente es voluntario: el propietario puede "
+            "optar por solicitarlo."
+        ),
+    },
+        {
+        "id": "beneficios_informe",
+        "fuente": "Dictamen secundario (verificar fuente primaria)",
+        "estado": "PENDIENTE",
+        "texto": (
+            "Beneficios de contar con informe favorable de un revisor "
+            "independiente, tanto cuando es obligatorio como cuando es "
+            "voluntario: rebaja de 30% en los derechos municipales y plazo "
+            "de revisión de la Dirección de Obras Municipales de 15 días hábiles."
         ),
     },
     {
@@ -122,7 +130,7 @@ CORPUS = [
             "nada: el informe favorable lo emite y firma el arquitecto revisor "
             "independiente. Toda salida del copiloto pasa por revisión humana "
             "antes de llegar a un cliente. Si la información disponible no "
-            "alcanza para responder, debe derivar a revisión humana en vez de "
+            "alcanza para responder, se debe contactar a un Arquitecto Revisor Independiente en vez de "
             "inventar una respuesta."
         ),
     },
