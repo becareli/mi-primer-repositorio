@@ -1,0 +1,20 @@
+Fecha: 2026-11-17
+Configuracion: k=5, chunk_size=500, chunk_overlap=75
+
+0.20 1.00 ¿Qué es un edificio de uso público?
+0.20 1.00 ¿Qué dos condiciones debe cumplir un edificio para ser de uso público?
+0.20 1.00 ¿Es obligatorio el informe favorable para un edificio de uso público?
+0.20 1.00 ¿Qué pasa si falta el informe favorable en un edificio de uso público?
+0.20 1.00 ¿Qué rebaja en los derechos municipales da el informe favorable?
+0.20 1.00 ¿En cuántos días hábiles revisa la Dirección de Obras con informe favorable del Revisor Independiente?
+0.20 1.00 ¿Puedo pedir la revisión de un anteproyecto a un revisor independiente?
+0.20 1.00 ¿La vivienda social necesita informe favorable?
+0.20 1.00 ¿Cuántos metros cuadrados por persona se cuentan en una oficina?
+0.20 1.00 ¿Cómo se calcula la carga de ocupación total de un edificio?
+0.20 1.00 ¿Quién firma el informe favorable?
+0.20 1.00 ¿El copiloto calcula la carga de ocupación con el modelo de lenguaje?
+0.20 0.50 ¿Un edificio con carga de ocupación de 80 personas necesita informe favorable?
+0.20 1.00 ¿La rebaja del 30% aplica también si el Informe es Obligatorio?
+0.00 n/a ¿Qué ancho mínimo debe tener una escalera de evacuación?
+
+promedio -> precision: 0.187 recall: 0.964
