@@ -1,0 +1,132 @@
+{
+  "n": 20,
+  "fallos_estrictos": 3,
+  "incumplimientos": 0,
+  "aciertos_campos": 155,
+  "total_campos": 160,
+  "detalle": [
+    {
+      "caso": 0,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 1,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 2,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 3,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 4,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 5,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 6,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 7,
+      "problemas": [],
+      "campos_correctos": 7
+    },
+    {
+      "caso": 8,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 9,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 10,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 11,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 12,
+      "problemas": [],
+      "campos_correctos": 7
+    },
+    {
+      "caso": 13,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 14,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 15,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 16,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 17,
+      "problemas": [],
+      "campos_correctos": 8
+    },
+    {
+      "caso": 18,
+      "problemas": [],
+      "campos_correctos": 6
+    },
+    {
+      "caso": 19,
+      "problemas": [],
+      "campos_correctos": 7
+    }
+  ],
+  "modo": "zeroshot",
+  "respuestas_crudas": [
+    "{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"oficinas\",\n  \"destino_declarado\": \"edificio de oficinas\",\n  \"comuna\": \"Viña del Mar\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 4800,\n  \"estructura\": \"hormigon\"\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"habitacional\",\n  \"destino_declarado\": \"120 departamentos\",\n  \"comuna\": \"Concepción\",\n  \"ingreso_dom\": \"si\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 9300,\n  \"estructura\": \"hormigon\"\n}",
+    "{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"educacional\",\n  \"destino_declarado\": \"Colegio\",\n  \"comuna\": \"Coquimbo\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": 2200,\n  \"superficie_nueva_m2\": 540,\n  \"estructura\": \"albanileria\"\n}",
+    "{\n  \"rol_cliente\": \"constructora\",\n  \"destino\": \"otro\",\n  \"destino_declarado\": \"gimnasio municipal\",\n  \"comuna\": \"Peñalolén\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 1100,\n  \"estructura\": null\n}",
+    "{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"jardin_infantil\",\n  \"destino_declarado\": \"Jardín infantil JUNJI\",\n  \"comuna\": \"Calama\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 480,\n  \"estructura\": \"acero\"\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"salud\",\n  \"destino_declarado\": \"hospital\",\n  \"comuna\": \"Antofagasta\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 15000,\n  \"estructura\": null\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"industrial\",\n  \"destino_declarado\": \"bodega\",\n  \"comuna\": \"Lampa\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": 6000,\n  \"superficie_nueva_m2\": 2500,\n  \"estructura\": \"acero\"\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"comercial\",\n  \"destino_declarado\": \"motel\",\n  \"comuna\": \"Machalí\",\n  \"ingreso_dom\": \"si\",\n  \"superficie_existente_m2\": 600,\n  \"superficie_nueva_m2\": 150,\n  \"estructura\": null\n}",
+    "```json\n{\n  \"rol_cliente\": \"constructora\",\n  \"destino\": \"habitacional\",\n  \"destino_declarado\": \"Casas\",\n  \"comuna\": \"Osorno\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 2900,\n  \"estructura\": \"madera\"\n}\n```",
+    "{\n  \"rol_cliente\": null,\n  \"destino\": \"comercial\",\n  \"destino_declarado\": \"centro comercial\",\n  \"comuna\": \"Talca\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 12000,\n  \"estructura\": \"mixta\"\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"otro\",\n  \"destino_declarado\": \"Iglesia evangélica\",\n  \"comuna\": \"Rancagua\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 700,\n  \"estructura\": \"albanileria\"\n}",
+    "```json\n{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"salud\",\n  \"destino_declarado\": \"Clínica dental\",\n  \"comuna\": \"Providencia\",\n  \"ingreso_dom\": \"si\",\n  \"superficie_existente_m2\": 1800,\n  \"superficie_nueva_m2\": 200,\n  \"estructura\": null\n}\n```",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"oficinas\",\n  \"destino_declarado\": \"Edificio corporativo\",\n  \"comuna\": \"Santiago centro\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 20000,\n  \"estructura\": \"hormigon\"\n}",
+    "{\n  \"rol_cliente\": \"constructora\",\n  \"destino\": \"educacional\",\n  \"destino_declarado\": \"Liceo técnico\",\n  \"comuna\": \"Iquique\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 3400,\n  \"estructura\": \"albanileria\"\n}",
+    "{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"comercial\",\n  \"destino_declarado\": \"restaurante con terraza\",\n  \"comuna\": \"Pucón\",\n  \"ingreso_dom\": \"si\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 380,\n  \"estructura\": \"madera\"\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"industrial\",\n  \"destino_declarado\": \"Fábrica de muebles\",\n  \"comuna\": \"San Bernardo\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": 2000,\n  \"superficie_nueva_m2\": 750,\n  \"estructura\": null\n}",
+    "{\n  \"rol_cliente\": \"constructora\",\n  \"destino\": \"salud\",\n  \"destino_declarado\": \"Cesfam\",\n  \"comuna\": \"Maipú\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 1600,\n  \"estructura\": \"hormigon\"\n}",
+    "{\n  \"rol_cliente\": null,\n  \"destino\": null,\n  \"destino_declarado\": null,\n  \"comuna\": null,\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": null,\n  \"estructura\": null\n}",
+    "{\n  \"rol_cliente\": \"mandante\",\n  \"destino\": \"habitacional\",\n  \"destino_declarado\": \"edificio d departamentos\",\n  \"comuna\": \"La Florida\",\n  \"ingreso_dom\": \"no\",\n  \"superficie_existente_m2\": 2500,\n  \"superficie_nueva_m2\": null,\n  \"estructura\": \"hormigon\"\n}",
+    "```json\n{\n  \"rol_cliente\": \"arquitecto\",\n  \"destino\": \"comercial\",\n  \"destino_declarado\": \"Hotel\",\n  \"comuna\": \"Puerto Varas\",\n  \"ingreso_dom\": null,\n  \"superficie_existente_m2\": null,\n  \"superficie_nueva_m2\": 2500,\n  \"estructura\": \"mixta\"\n}\n```"
+  ]
+}
