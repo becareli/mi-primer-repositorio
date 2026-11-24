@@ -45,8 +45,9 @@ def test_medir_guarda_segundos():
 
 def test_registro_tiene_las_claves_y_tres_etapas(almacen):
     reg = rr.registrar_consulta("pregunta", 3, EmbeddingsFalsos(), almacen, ModeloFalso())
-    for clave in ("timestamp", "pregunta", "k", "tiempos_ms", "tiempo_total_ms", "tokens"):
+    for clave in ("timestamp", "pregunta_len", "pregunta_huella", "k", "tiempos_ms", "tiempo_total_ms", "tokens"):
         assert clave in reg
+    assert "pregunta" not in reg  # gobernanza: el texto de la consulta no se guarda
     assert list(reg["tiempos_ms"]) == ["embed_query", "busqueda_vectorial", "generacion"]
     assert reg["tiempo_total_ms"] == pytest.approx(sum(reg["tiempos_ms"].values()), abs=0.05)
     assert reg["tiempos_ms"]["generacion"] > reg["tiempos_ms"]["busqueda_vectorial"]

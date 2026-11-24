@@ -19,8 +19,9 @@ def test_casos_borde():
     assert ev.promediar([1.0, None, 0.0]) == 0.5
 
 
-def test_conjunto_tiene_entre_8_y_15_casos():
-    assert 8 <= len(ev.CASOS_EVALUACION) <= 15
+def test_conjunto_tiene_entre_8_y_25_casos():
+    # Gate 2: el corpus creció de 8 a 12 documentos, el conjunto crece con él.
+    assert 8 <= len(ev.CASOS_EVALUACION) <= 25
 
 
 def test_ids_relevantes_son_sets_y_existen_en_el_corpus():

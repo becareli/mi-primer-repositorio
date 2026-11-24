@@ -24,3 +24,8 @@ trazas_agente.jsonl
 
 # Índice de vectores (regenerable con python src\indexar_corpus.py)
 vectorstore/
+# Gate 2: índice del modo simulado, logs y bandeja de respuestas a clientes (datos de clientes: no se suben)
+vectorstore_simulado/
+logs/
+bandeja_salida/
+.pytest_cache/

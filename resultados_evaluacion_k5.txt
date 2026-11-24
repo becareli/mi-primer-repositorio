@@ -1,4 +1,4 @@
-Fecha: 2026-11-17
+Fecha: 2026-11-24
 Configuracion: k=5, chunk_size=500, chunk_overlap=75
 
 0.20 1.00 ¿Qué es un edificio de uso público?
@@ -6,7 +6,7 @@ Configuracion: k=5, chunk_size=500, chunk_overlap=75
 0.20 1.00 ¿Es obligatorio el informe favorable para un edificio de uso público?
 0.20 1.00 ¿Qué pasa si falta el informe favorable en un edificio de uso público?
 0.20 1.00 ¿Qué rebaja en los derechos municipales da el informe favorable?
-0.20 1.00 ¿En cuántos días hábiles revisa la Dirección de Obras con informe favorable del Revisor Independiente?
+0.40 1.00 ¿En cuántos días hábiles revisa la Dirección de Obras con informe favorable del Revisor Independiente?
 0.20 1.00 ¿Puedo pedir la revisión de un anteproyecto a un revisor independiente?
 0.20 1.00 ¿La vivienda social necesita informe favorable?
 0.20 1.00 ¿Cuántos metros cuadrados por persona se cuentan en una oficina?
@@ -15,6 +15,10 @@ Configuracion: k=5, chunk_size=500, chunk_overlap=75
 0.20 1.00 ¿El copiloto calcula la carga de ocupación con el modelo de lenguaje?
 0.20 0.50 ¿Un edificio con carga de ocupación de 80 personas necesita informe favorable?
 0.20 1.00 ¿La rebaja del 30% aplica también si el Informe es Obligatorio?
+0.20 1.00 ¿Cuántos días tiene la DOM para un proyecto de más de 1.000 personas?
+0.20 1.00 ¿El revisor independiente revisa el cálculo estructural?
+0.20 1.00 ¿Qué documentos necesito para pedir una cotización de revisión?
+0.20 1.00 ¿Cuánto demora el checklist de pre-revisión?
 0.00 n/a ¿Qué ancho mínimo debe tener una escalera de evacuación?
 
-promedio -> precision: 0.187 recall: 0.964
+promedio -> precision: 0.200 recall: 0.972

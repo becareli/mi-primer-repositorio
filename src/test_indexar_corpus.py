@@ -76,3 +76,25 @@ def test_busqueda_devuelve_metadatos(tmp_path):
 def test_explicar_error():
     assert "espera" in ic.explicar_error_red(Exception("429 RESOURCE_EXHAUSTED"))
     assert "clave" in ic.explicar_error_red(Exception("API key not valid"))
+
+
+# ---------- Bloque 25 / Gate 2: corpus en carpeta e indexación incremental ----------
+def test_corpus_se_lee_desde_la_carpeta():
+    ids = {c["id"] for c in ic.cargar_corpus()}
+    assert {"informe_obligatorio", "plazos_dom", "cotizar_servicio"} <= ids
+    assert all(c["texto"] and c["fuente"] for c in ic.cargar_corpus())
+
+
+def test_sincronizar_solo_toca_lo_que_cambio(tmp_path):
+    carpeta = str(tmp_path / "vs")
+    chunks = ic.partir_en_chunks(ic.construir_documentos())
+    almacen = ic.indexar(chunks, EmbeddingsFalsos(), carpeta)
+    assert ic.sincronizar(almacen, chunks)["sin_cambios"] == len(chunks)
+
+    corpus = [dict(c) for c in ic.CORPUS]
+    corpus[0]["texto"] += " Texto agregado."            # modifica un documento
+    corpus = corpus[:-1]                                 # elimina el último
+    corpus.append({"id": "nuevo_doc", "fuente": "x", "estado": "PENDIENTE", "texto": "Nuevo."})
+    resumen = ic.sincronizar(almacen, ic.partir_en_chunks(ic.construir_documentos(corpus)))
+    assert resumen["nuevos"] == 1 and resumen["modificados"] == 1 and resumen["eliminados"] >= 1
+    assert almacen._collection.count() == len(ic.partir_en_chunks(ic.construir_documentos(corpus)))

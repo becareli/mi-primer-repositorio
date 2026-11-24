@@ -102,6 +102,9 @@ def main():
                         "version original del prompt de pre-revision (Bloque 26)")
     registrar_si_cambio(registro, NOMBRE_PROMPT, PROMPT_V2, AUTOR,
                         "agrega instruccion anti-inyeccion (Bloque 31)")
+    from servicio_rag import PROMPT_SISTEMA  # v3: la versión que usa el servicio del Gate 2
+    registrar_si_cambio(registro, NOMBRE_PROMPT, PROMPT_SISTEMA, AUTOR,
+                        "separa roles (system/human) y delimita <contexto> (Gate 2)")
     registro.guardar()
 
     versiones = [v for v in registro.versiones if v["nombre"] == NOMBRE_PROMPT]

@@ -11,6 +11,7 @@ caracteres). Cada corrida queda como UNA línea en registros_latencia_costo.json
 Uso (desde la raíz del repositorio, con el entorno activado):
     python src\\registro_rag.py        # 3 preguntas con k=3 y 1 pregunta repetida con k=6
 """
+import hashlib
 import json
 import os
 import sys
@@ -66,7 +67,9 @@ def registrar_consulta(pregunta, k, embeddings, almacen, modelo):
     tokens = dict(respuesta.usage_metadata) if getattr(respuesta, "usage_metadata", None) else None
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "pregunta": pregunta,
+        # Gobernanza (Gate 2): se guarda el largo y una huella, nunca el texto de la consulta.
+        "pregunta_len": len(pregunta),
+        "pregunta_huella": hashlib.sha256(pregunta.encode("utf-8")).hexdigest()[:12],
         "k": k,
         "modelo": MODELO_CHAT,
         "tiempos_ms": {etapa: round(s * 1000, 2) for etapa, s in tiempos.items()},

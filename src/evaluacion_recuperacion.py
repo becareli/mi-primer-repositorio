@@ -48,7 +48,7 @@ CASOS_EVALUACION = [
     {"pregunta": "¿Qué rebaja en los derechos municipales da el informe favorable?",
      "ids_relevantes": {"beneficios_informe-1"}},
     {"pregunta": "¿En cuántos días hábiles revisa la Dirección de Obras con informe favorable del Revisor Independiente?",
-     "ids_relevantes": {"beneficios_informe-1"}},
+     "ids_relevantes": {"beneficios_informe-1", "plazos_dom-1"}},
     {"pregunta": "¿Puedo pedir la revisión de un anteproyecto a un revisor independiente?",
      "ids_relevantes": {"anteproyecto-1"}},
     {"pregunta": "¿La vivienda social necesita informe favorable?",
@@ -67,6 +67,15 @@ CASOS_EVALUACION = [
     # Descuento en Derechos Municipales del 30%
     {"pregunta": "¿La rebaja del 30% aplica también si el Informe es Obligatorio?",
      "ids_relevantes": {"beneficios_informe-1"}},
+    # Gate 2: preguntas para los documentos nuevos del corpus (etiquetadas leyendo corpus/).
+    {"pregunta": "¿Cuántos días tiene la DOM para un proyecto de más de 1.000 personas?",
+     "ids_relevantes": {"plazos_dom-1"}},
+    {"pregunta": "¿El revisor independiente revisa el cálculo estructural?",
+     "ids_relevantes": {"funciones_revisor-1"}},
+    {"pregunta": "¿Qué documentos necesito para pedir una cotización de revisión?",
+     "ids_relevantes": {"cotizar_servicio-1"}},
+    {"pregunta": "¿Cuánto demora el checklist de pre-revisión?",
+     "ids_relevantes": {"proceso_servicio-1"}},
     # Sin respuesta en el corpus: recall = None, se ignora en el promedio de recall.
     {"pregunta": "¿Qué ancho mínimo debe tener una escalera de evacuación?",
      "ids_relevantes": set()},

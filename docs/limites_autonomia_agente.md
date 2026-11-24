@@ -16,7 +16,7 @@ Es un asistente de **pre-revisión**: calcula una carga de ocupación y consulta
 
 Que la acción sea de riesgo bajo no significa que el contenido sea infalible. Dos riesgos de **contenido** que hoy siguen abiertos:
 
-- **Reglas aún no verificadas.** `REGLAS` proviene de un dictamen secundario. Varias reglas de `docs/tabla_supuestos.md` están pendientes de verificar contra fuente primaria (por ejemplo vivienda con local pequeño, estacionamientos y el coeficiente de ocupación). Hasta verificarlas, la respuesta sobre la norma es orientativa.
+- **Reglas aún no verificadas.** `REGLAS` proviene de un dictamen secundario. Los documentos de `corpus/` con estado PENDIENTE o LECTURA están pendientes de verificar contra fuente primaria (por ejemplo vivienda con local pequeño, estacionamientos y el coeficiente de ocupación). Hasta verificarlas, la respuesta sobre la norma es orientativa.
 - **Un número equivocado puede llevar a una mala decisión.** Una carga mal calculada podría hacer creer que un edificio no necesita informe. Por eso el cálculo es determinista en Python y por eso toda salida pasa por revisión humana antes de llegar a un cliente.
 
 ## 2. Herramientas que requieren aprobación humana

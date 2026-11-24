@@ -10,5 +10,5 @@ with open("registros_latencia_costo.jsonl", encoding="utf-8") as f:
         lenta = max(etapas, key=etapas.get)
         print(
             f"k={r['k']} input_tokens={entrada} total={r['tiempo_total_ms']} ms "
-            f"(mas lenta: {lenta}) {r['pregunta'][:35]}"
+            f"(mas lenta: {lenta}) {r.get('pregunta_huella') or r.get('pregunta', '')[:35]}"
         )
